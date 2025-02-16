@@ -3,7 +3,7 @@ import { ipcRenderer } from "electron";
 import { stat } from 'fs';
 
 electron.contextBridge.exposeInMainWorld('electronAPI', {
-  subscribeStatistics: (callback) => {
+  subscribeStatistics: (callback: any) => {
     ipcOne('statistics', (stats) => {
       callback(stats);
     });
